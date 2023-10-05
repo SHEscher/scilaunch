@@ -24,7 +24,7 @@ A tiny program for you that lays the foundation for great discoveries.
 
 ---
 
-The project structure can be occupied with other programming languages (`R`, `matlab`, etc.) as well.
+The project structure can be populated with other programming languages (`R`, `matlab`, etc.) as well.
 
 `scilaunch` is a wrapper around the great [`cookiecutter`](https://github.com/cookiecutter/cookiecutter) package and is mainly build around this template: [research-project](https://github.com/SHEscher/research-project).
 
@@ -67,4 +67,6 @@ Here you can find also more information on the `~/.cookiecutterrc`
 ## TODO's
 
 - [ ] allow to pass other `cookiecutter` templates
-- [ ] push to `pypi` (this is currently requested under following [issue](https://github.com/pypi/support/issues/3009#issue-1801180281))
+- [ ] add proper docs
+- [ ] add files in `/.github/ISSUE_TEMPLATE/`
+- [ ] add `CONTRIBUTING.md``

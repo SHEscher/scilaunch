@@ -1,0 +1,9 @@
+black
+flake8
+mypy
+pytest
+pytest-cov
+ruff
+toml
+tox>=4.4
+tox-gh-actions

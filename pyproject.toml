@@ -1,0 +1,134 @@
+[project]
+name = "scilaunch"
+version = "0.1.5"
+description = "A tiny program for you, seting up the ground for grant discoveries. (2023)"
+readme = "README.md"
+requires-python = ">=3.8"
+license = { file = "LICENSE" }
+authors = [{ name = "Simon M. Hofmann", email = "simon.hofmann@pm.me" }]
+maintainers = [{ name = "Simon M. Hofmann", email = "simon.hofmann@pm.me" }]
+keywords = ["template", "BIDS", "reproducibilty", "standardization"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "Intended Audience :: Developers",
+    "Natural Language :: English",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+
+dependencies = [
+    "cookiecutter>=2.2.0, <3.0",
+    'GitPython>=3.1, <4.0',
+    "python-box>=7.0, <8.0",
+]
+
+[project.optional-dependencies]
+develop = [
+    "black>=23.9",
+    "ruff>=0.0.291",
+    "tox>=4.11",
+    "pytest>=7.2",
+    "pytest-cov",
+]
+
+[project.urls]
+repository = "https://github.com/SHEscher/scilaunch"
+
+# For command line interface (CLI)
+[project.scripts]
+scilaunch = "scilaunch.main:main"
+
+[tool.setuptools]
+platforms = ["unix", "linux", "osx", "cygwin", "win32"]
+zip-safe = false
+
+# To automatically find the package(s) (Beta feature (Oct, 2022)):
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["scilaunch"]
+exclude = ["tests"]
+
+[tool.setuptools.package-data]
+scilaunch = ["**/*.json", "**/.cookiecutterrc"]
+
+[tool.flake8]
+max-line-length = 119
+
+[tool.ruff]
+select = ["ALL"]
+unfixable = [ # list of rules to consider non-autofix-able.
+    "ERA001", # Found commented-out code
+    "F401",   # unused imports
+    "RUF100", # `noqa` directives that are no longer applicable
+]
+ignore = ["ANN", "COM", "D203", "D212", "FBT", "N806", "T201"]
+
+extend-exclude = []
+line-length = 119   # Same as flake8 and black
+# target-version = "py311"
+src = ["src/scilaunch", "src/tests"]
+
+[tool.ruff.extend-per-file-ignores]
+"*/tests/*.py" = [
+    "S101",
+    "ERA001",
+] # ignore assert statements, & comments in tests
+
+[tool.black]
+line-length = 119
+target-version = ["py38", "py39", "py310", "py311", "py312"]
+src = ["src/scilaunch", "src/tests"]
+
+# ALL ABOVE IS ADAPTATION OF THE FORMER setup.cfg
+# ALL BELOW WAS ALREADY PART OF pyproject.toml [Oct, 2022]
+
+[build-system]
+requires = ["setuptools>=65.5", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.pytest.ini_options]
+#addopts = "--cov=scilaunch"
+testpaths = ["src/tests"]
+
+[tool.mypy]
+mypy_path = "src"
+check_untyped_defs = true
+disallow_any_generics = true
+ignore_missing_imports = true
+no_implicit_optional = true
+show_error_codes = true
+strict_equality = true
+warn_redundant_casts = true
+warn_return_any = true
+warn_unreachable = true
+warn_unused_configs = true
+no_implicit_reexport = true
+
+[tool.coverage.run]
+data_file = "src/tests/.coverage"
+
+[tool.coverage.report]
+exclude_lines = ["if __name__ == .__main__.:"]
+
+[tool.coverage.html]
+directory = "src/tests/coverage_html_report"
+
+# For instance run in shell: bumpver update --dry --no-fetch --patch
+[tool.bumpver]
+current_version = "0.1.5"
+version_pattern = "MAJOR.MINOR.PATCH"
+commit_message = "bump version {old_version} -> {new_version}"
+commit = true
+tag = true
+push = false
+
+[tool.bumpver.file_patterns]
+"pyproject.toml" = ['^version = "{version}"', 'current_version = "{version}"']
+"src/scilaunch/__init__.py" = ['^__version__ = "{version}"']
+"README.md" = [' v.{version}']

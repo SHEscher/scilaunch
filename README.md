@@ -34,11 +34,17 @@ The project structure can be populated with other programming languages (`R`, `m
 
 Ideally install `scilaunch` into your global/base `python` environment, which should be `python>=3.8`.
 
+Install from PyPI:
+```shell
+pip install -U scilaunch
+```
+
+Alternatively, install from the GitHub repo:
 ```shell
 pip install -U git+https://github.com/SHEscher/scilaunch.git
 ```
 
-It is also recommended to have `conda` installed.
+It is also recommended to have [`conda`](https://docs.conda.io/projects/conda/en/latest/user-guide/install/index.html) installed.
 
 ### Run `scilaunch`
 

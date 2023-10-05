@@ -69,4 +69,4 @@ Here you can find also more information on the `~/.cookiecutterrc`
 - [ ] allow to pass other `cookiecutter` templates
 - [ ] add proper docs
 - [ ] add files in `/.github/ISSUE_TEMPLATE/`
-- [ ] add `CONTRIBUTING.md``
+- [ ] add `CONTRIBUTING.md`

@@ -31,7 +31,7 @@ dependencies = [
 [project.optional-dependencies]
 develop = [
     "black>=23.9",
-    "ruff>=0.0.291",
+    "ruff>=0.0.292",
     "tox>=4.11",
     "pytest>=7.2",
     "pytest-cov",

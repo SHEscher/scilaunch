@@ -1,7 +1,7 @@
 [project]
 name = "scilaunch"
-version = "0.1.5"
-description = "A tiny program for you, seting up the ground for grant discoveries. (2023)"
+version = "0.1.0"
+description = "A tiny program for you, seting up the ground for grand discoveries. (2023)"
 readme = "README.md"
 requires-python = ">=3.8"
 license = { file = "LICENSE" }
@@ -38,7 +38,7 @@ develop = [
 ]
 
 [project.urls]
-repository = "https://github.com/SHEscher/scilaunch"
+GitHub = "https://github.com/SHEscher/scilaunch"
 
 # For command line interface (CLI)
 [project.scripts]
@@ -121,7 +121,7 @@ directory = "src/tests/coverage_html_report"
 
 # For instance run in shell: bumpver update --dry --no-fetch --patch
 [tool.bumpver]
-current_version = "0.1.5"
+current_version = "0.1.0"
 version_pattern = "MAJOR.MINOR.PATCH"
 commit_message = "bump version {old_version} -> {new_version}"
 commit = true

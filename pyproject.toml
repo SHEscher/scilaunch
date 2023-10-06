@@ -1,7 +1,7 @@
 [project]
 name = "scilaunch"
 version = "0.1.1"
-description = "A tiny program for you, seting up the ground for grand discoveries. (2023)"
+description = "A tiny program for you, setting up the ground for grand discoveries. (2023)"
 readme = "README.md"
 requires-python = ">=3.8"
 license = { file = "LICENSE" }

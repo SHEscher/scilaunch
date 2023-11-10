@@ -59,6 +59,7 @@ docs = [
 
 [project.urls]
 GitHub = "https://github.com/SHEscher/scilaunch"
+Documentation = "https://shescher.github.io/scilaunch/"
 
 # For command line interface (CLI)
 [project.scripts]

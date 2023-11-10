@@ -32,7 +32,7 @@ A more comprehensive contribution guide will be added in the future, in case the
 ## Future directions & ToDo's
 
 - [x] add proper docs
+  - [x] create website for docs
   - [ ] extend `docs/`
-  - [ ] create website for docs
 - [ ] allow passing other `cookiecutter` templates
 - [ ] add files in `/.github/ISSUE_TEMPLATE/`

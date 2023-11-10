@@ -1,7 +1,7 @@
 # MkDocs configuration file (inspired by mkdocstrings)
 site_name: scilaunch
 site_description: A tiny program for you, setting up the ground for grand discoveries
-# site_url: https://scilaunch.github.io/  # specifies the base URL for the site.
+site_url: https://shescher.github.io/scilaunch/
 repo_url: https://github.com/SHEscher/scilaunch
 repo_name: SHEscher/scilaunch
 site_dir: "site"

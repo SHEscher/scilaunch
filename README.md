@@ -48,7 +48,7 @@ A tiny program for you that lays the foundation for great discoveries.
     │   └── 📁 datavisualization
     └── 🐍 setup.py
     ```
-2. it prepares your research code as `Python` package ready for `import`
+2. `scilaunch` prepares your research code as `Python` package ready for `import`
 
 3. `scilaunch` offers to set up a `conda` environment, and prepares it as `jupyter` kernel
 

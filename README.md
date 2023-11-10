@@ -2,7 +2,7 @@
 
 A tiny program for you that lays the foundation for great discoveries.
 
-![scilaunch](scilaunch_logo.png)
+![scilaunch](https://github.com/SHEscher/scilaunch/raw/main/scilaunch_logo.png)
 
 ![License](https://img.shields.io/badge/license-BSD-blue.svg)
 ![Python](https://img.shields.io/badge/python->=3.8-blue.svg)

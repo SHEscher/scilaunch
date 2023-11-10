@@ -8,7 +8,7 @@ A tiny program for you that lays the foundation for great discoveries.
 ![Python](https://img.shields.io/badge/python->=3.8-blue.svg)
 ![Environment](https://github.com/SHEscher/scilaunch/actions/workflows/tests.yaml/badge.svg)
 
-`[Last update 2023-11-10 | v.0.1.1]`
+`[Last update 2023-11-10 | v.0.1.2]`
 
 ## Description
 

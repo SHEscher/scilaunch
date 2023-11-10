@@ -1,0 +1,143 @@
+# MkDocs configuration file (inspired by mkdocstrings)
+site_name: scilaunch
+site_description: A tiny program for you, setting up the ground for grand discoveries
+# site_url: https://scilaunch.github.io/  # specifies the base URL for the site.
+repo_url: https://github.com/SHEscher/scilaunch
+repo_name: SHEscher/scilaunch
+site_dir: "site"
+watch: [mkdocs.yml, README.md, src/scilaunch]
+
+validation:
+  omitted_files: warn
+  absolute_links: warn
+  unrecognized_links: warn
+
+nav:
+- Home:
+  - Overview: index.md
+  - License: license.md
+- Source Code: reference/
+- Development:
+    - Changelog: changelog.md
+    - Contributing: contributing.md
+    #- Coverage report: coverage.md
+
+theme:
+  name: material  # readthedocs
+  logo: scilaunch_logo.png
+  #custom_dir: docs/custom_dir # add subdirectory to overwrite
+  features:
+  - announce.dismiss  # Allows users to dismiss announcement banners or messages.
+  - content.action.edit  # Provides a button or link to edit the current page's source code.
+  - content.action.view  # Provides a button or link to view the current page's source code.
+  - content.code.annotate  # Allows users to add annotations or comments to code blocks.
+  - content.code.copy  # Provides a button or link to copy code blocks to the clipboard.
+  - content.tooltips  # Displays tooltips when hovering over certain elements.
+  - navigation.expand  # Allows users to expand or collapse navigation menus.
+  - navigation.footer  # Displays a footer at the bottom of the page.
+  - navigation.indexes  # Displays an index or table of contents for the current page.
+  - navigation.sections  # Displays a list of sections or headings for the current page.
+  - navigation.tabs  # Displays tabs for navigating between pages or sections.
+  - navigation.tabs.sticky  # Makes the navigation tabs sticky or fixed to the top of the page.
+  - navigation.top  # Provides a button or link to scroll to the top of the page.
+  - search.highlight  # Highlights search results on the page.
+  - search.suggest  # Provides suggestions or autocomplete for search queries.
+  - toc.follow  # Automatically scrolls the table of contents to the current section or heading.
+  palette:  # Sets the color palette of the site.
+  - media: "(prefers-color-scheme)"
+    toggle:
+      icon: material/brightness-auto
+      name: Switch to light mode
+  - media: "(prefers-color-scheme: light)"
+    scheme: default
+    primary: teal
+    accent: purple
+    toggle:
+      icon: material/weather-sunny
+      name: Switch to dark mode
+  - media: "(prefers-color-scheme: dark)"
+    scheme: slate
+    primary: black  # deep_orange
+    accent: yellow # lime, amber
+    toggle:
+      icon: material/weather-night
+      name: Switch to system preference
+
+# Sets the extra CSS files to include in the site.
+#   (addition to default styles provided by the MkDocs theme)
+extra_css:
+- css/style.css
+- css/material.css
+- css/mkdocstrings.css
+
+# Sets the markdown extensions to use in the site.
+markdown_extensions:
+- attr_list
+- admonition
+- callouts
+- footnotes
+- pymdownx.emoji:
+    emoji_index: !!python/name:material.extensions.emoji.twemoji
+    emoji_generator: !!python/name:material.extensions.emoji.to_svg
+- pymdownx.details
+- pymdownx.magiclink
+- pymdownx.snippets:
+    check_paths: true
+- pymdownx.superfences
+- pymdownx.tabbed:
+    alternate_style: true
+    slugify: !!python/object/apply:pymdownx.slugs.slugify
+      kwds:
+        case: lower
+- pymdownx.tasklist:
+    custom_checkbox: true
+- pymdownx.tilde
+- toc:
+    permalink: "☄︎"
+
+# Sets the plugins to use in the site.
+plugins:
+- search
+- markdown-exec
+- gen-files:
+    scripts:
+    - scripts/gen_ref_nav.py
+- literate-nav:
+    nav_file: SUMMARY.txt
+    implicit_index: true
+- autorefs
+#- coverage:
+#    page_name: coverage
+#    html_report_dir: src/tests/coverage_html_report
+- mkdocstrings:
+    handlers:
+      python:
+        import:
+        - https://docs.python.org/3/objects.inv
+        - https://installer.readthedocs.io/en/stable/objects.inv
+        - https://mkdocstrings.github.io/autorefs/objects.inv
+        paths: [src]
+        options:
+          docstring_options:
+            ignore_init_summary: false
+          docstring_section_style: table
+          docstring_style: sphinx
+          filters: ["!^_"]
+          heading_level: 1
+          inherited_members: true
+          merge_init_into_class: true
+          separate_signature: true
+          show_root_heading: true
+          show_root_full_path: false
+          show_signature_annotations: true
+          show_symbol_type_heading: true
+          show_symbol_type_toc: true
+          signature_crossrefs: true
+          summary: true
+- minify:
+    minify_html: !ENV [DEPLOY, false]
+#- redirects:
+#    redirect_maps:
+#        'old.md': 'new.md'
+#        'old/file.md': 'new/file.md'
+#        'some_file.md': 'http://external.url.com/foobar'

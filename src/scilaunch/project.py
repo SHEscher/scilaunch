@@ -1,10 +1,4 @@
-"""
-Create project module for scilaunch.
-
-Author:  Simon M. Hofmann
-Contact: simon.[lastname][at]pm.me
-Years:   2023
-"""
+"""Create project module for `scilaunch`."""
 
 # %% Import
 import json
@@ -16,16 +10,26 @@ from git.exc import GitCommandError
 
 from scilaunch.configs import path_to
 
-# %% Set global vars & paths  >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o
+# %% Set global vars & paths >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o
 
 COOKIECUTTERRC = Path.home() / ".cookiecutterrc"  # destination for cookiecutterrc file
 
 
-# %% Functions  >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o
+# %% Functions >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o
 
 
 def create_cookiecutterrc(**kwargs):
-    """Create the .cookiecutterrc file."""
+    """
+    Create the `.cookiecutterrc` file.
+
+    The `.cookiecutterrc` file is stored in the home directory "`~`"
+    and contains default values for the `research-project` template.
+
+    Fore more information on the `.cookiecutterrc` file check out the `cookiecutter`
+    [documentation](https://cookiecutter.readthedocs.io/en/stable/index.html).
+
+    :param dict kwargs: Keyword arguments passed to `cookiecutter`.
+    """
     # Check whether .cookiecutterrc file exists in the home directory
     if not COOKIECUTTERRC.exists():
         # Create cookiecutterrc file
@@ -62,7 +66,14 @@ def create_cookiecutterrc(**kwargs):
 
 
 def is_git_repo_up_to_date(path):
-    """Check whether the local git repository is up-to-date."""
+    """
+    Check whether the local git repository at the given path is up to date.
+
+    :param path: Path to the local git repository.
+    :type path: str or pathlib.Path
+    :return: True if the local git repository is up to date, False otherwise.
+    :rtype: bool
+    """
     repo = Repo(path)
     upstream = repo.remotes.origin
     try:
@@ -76,7 +87,14 @@ def is_git_repo_up_to_date(path):
 
 
 def create(out_dir, create_cc_rc=True, **kwargs):
-    """Create the research project structure."""
+    """
+    Create the research project structure based on the `research-project` template.
+
+    :param out_dir: Path to the output directory.
+    :type out_dir: str or pathlib.Path
+    :param bool create_cc_rc: Whether to create the `.cookiecutterrc` file.
+    :param dict kwargs: Keyword arguments passed to `cookiecutter`.
+    """
     # Create cookiecutterrc file (if not existing)
     if create_cc_rc:
         create_cookiecutterrc()
@@ -87,7 +105,7 @@ def create(out_dir, create_cc_rc=True, **kwargs):
     if not template.exists():
         template = path_to.templates.remote.research_project
     else:
-        # Check whether template is up-to-date
+        # Check whether the template is up to date
         print(f"Checking whether '{template.name}' template is up-to-date ...")
         if not is_git_repo_up_to_date(path=template):  # run git fetch
             answer = input(
@@ -108,10 +126,4 @@ def create(out_dir, create_cc_rc=True, **kwargs):
     cookiecutter(template=str(template), overwrite_if_exists=False, output_dir=str(out_dir), **kwargs)
 
 
-# %% __main__ o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o
-
-if __name__ == "__main__":
-    # Run main
-    pass
-
-#  o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o END
+# o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o END

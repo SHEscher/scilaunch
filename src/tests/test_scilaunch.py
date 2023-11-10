@@ -1,4 +1,11 @@
-"""Tests for scilaunch package."""
+"""
+Tests for scilaunch package.
+
+Run with:
+
+    pytest --cov --cov-report=html
+
+"""
 
 # %% Import
 import shutil
@@ -8,12 +15,12 @@ from pathlib import Path
 import toml
 from scilaunch import configs, project
 
-# %% Set global vars & paths  >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o
+# %% Set global vars & paths >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o
 
 SCILAUNCH_CACHE = Path.home() / ".cache/scilaunch"
 
 
-# %% Test Functions  o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o
+# %% Test Functions o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o
 
 
 # scilaunch.configs
@@ -61,3 +68,6 @@ def test_create():
     # Check if cache dir is empty, if so remove it
     if not list(SCILAUNCH_CACHE.iterdir()):
         SCILAUNCH_CACHE.rmdir()
+
+
+# o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o END

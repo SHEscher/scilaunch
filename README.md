@@ -8,14 +8,46 @@ A tiny program for you that lays the foundation for great discoveries.
 ![Python](https://img.shields.io/badge/python->=3.8-blue.svg)
 ![Environment](https://github.com/SHEscher/scilaunch/actions/workflows/tests.yaml/badge.svg)
 
-`[Last update 2023-11-03 | v.0.1.1]`
+`[Last update 2023-11-10 | v.0.1.1]`
 
 ## Description
 
 `scilaunch` helps you to set up your research project:
 
 1. it creates a canonical directory structure tailored for research projects
-
+    ```
+    🚀 yourgreatstudy/
+    ├── 📄 README.md
+    ├── 📂 code
+    │   ├── 📁 Rscripts
+    │   ├── 📁 configs
+    │   ├── 📂 notebooks
+    │   │   └── 🐍 yourgreatstudy.ipynb
+    │   ├── 📁 tests
+    │   └── 📂 yourgreatstudy
+    │       ├── 🐍 __init__.py
+    │       └── 📁 preprocessing
+    ├── 📂 data
+    │   ├── 📋 participants.tsv
+    │   ├── 📁 sub-01
+    │   ├── 📁 sub-02
+    │   └── 📁 sub-03
+    ├── 📂 literature
+    │   ├── 📁 pdfs
+    │   └── 📙 yourgreatstudy.bib
+    ├── 📂 organisation
+    │   ├── 📁 ethics
+    │   ├── 📁 participation_forms
+    │   ├── 📁 preregistration
+    ├── 📂 publications
+    │   ├── 📁 articles
+    │   ├── 📁 poster
+    │   └── 📁 presentations
+    ├── 📄 pyproject.toml
+    ├── 📂 results
+    │   └── 📁 datavisualization
+    └── 🐍 setup.py
+    ```
 2. it prepares your research code as `Python` package ready for `import`
 
 3. `scilaunch` offers to set up a `conda` environment, and prepares it as `jupyter` kernel
@@ -67,17 +99,10 @@ You can still change these default values in `~/.cookiecutterrc` at a later stag
 
 ## Cookiecutter templates
 
-`scilaunch` is a wrapper around the great [`cookiecutter`](https://github.com/cookiecutter/cookiecutter) package and is mainly built around this template: [research-project](https://github.com/SHEscher/research-project).
+`scilaunch` is a wrapper around the great [`cookiecutter`](https://github.com/cookiecutter/cookiecutter) package
+and is mainly built around this template: [`research-project`](https://github.com/SHEscher/research-project).
 
-To build your own templates, check out the `cookiecutter` [docs](https://cookiecutter.readthedocs.io/en/stable/index.html). Feel free to fork & adapt the [research-project](https://github.com/SHEscher/research-project) template.
+How to build your own template(s) and contribute to this project: please check out `CONTRIBUTING.md`.
 
+Note, after running `scilaunch` the first time, you can adapt your default values in `~/.cookiecutterrc` at any time.
 Check out the `cookiecutter` [documentation](https://cookiecutter.readthedocs.io/en/stable/index.html) for more information on the `~/.cookiecutterrc`.
-
----
-
-## TODO's
-
-- [ ] allow to pass other `cookiecutter` templates
-- [ ] add proper docs
-- [ ] add files in `/.github/ISSUE_TEMPLATE/`
-- [ ] add `CONTRIBUTING.md`

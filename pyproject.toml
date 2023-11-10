@@ -30,11 +30,31 @@ dependencies = [
 
 [project.optional-dependencies]
 develop = [
-    "black>=23.9",
-    "ruff>=0.0.292",
+    "black>=23.11.0",
+    "ruff>=0.1.5",
     "tox>=4.11",
     "pytest>=7.2",
     "pytest-cov",
+    "toml==0.10.2",
+]
+
+docs = [
+    "blacken-docs>=1.13",
+    "docutils>=0.20.1",
+    "markdown-callouts>=0.2",
+    "markdown-exec[ansi]>=0.5",
+    "mkdocs>=1.5",
+    "mkdocs-autorefs>=0.5.0",
+    "mkdocs-coverage>=0.2",
+    "mkdocs-gen-files>=0.3",
+    # "mkdocs-git-committers-plugin-2>=1.1",
+    "mkdocs-literate-nav>=0.4",
+    "mkdocs-material>=7.3",
+    "mkdocs-material-extensions",
+    "mkdocs-minify-plugin>=0.6.4",
+    "mkdocs-redirects>=1.2.0",
+    "mkdocstrings[python]",  # add language-specific extensions
+    "pypandoc>=1.12",  # if issue: install via conda install -c conda-forge pypandoc
 ]
 
 [project.urls]
@@ -65,7 +85,6 @@ select = ["ALL"]
 unfixable = [ # list of rules to consider non-autofix-able.
     "ERA001", # Found commented-out code
     "F401",   # unused imports
-    "RUF100", # `noqa` directives that are no longer applicable
 ]
 ignore = ["ANN", "COM", "D203", "D212", "FBT", "N806", "T201"]
 

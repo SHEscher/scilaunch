@@ -4,11 +4,13 @@ A tiny program for you that lays the foundation for great discoveries.
 
 ![scilaunch](https://github.com/SHEscher/scilaunch/raw/main/scilaunch_logo.png)
 
-![License](https://img.shields.io/badge/license-BSD-blue.svg)
-![Python](https://img.shields.io/badge/python->=3.8-blue.svg)
 ![Environment](https://github.com/SHEscher/scilaunch/actions/workflows/tests.yaml/badge.svg)
+![Python](https://img.shields.io/badge/python->=3.8-blue.svg)
+[![License: BSD](https://img.shields.io/badge/License-BSD-purple.svg)](https://github.com/shescher/scilaunch/blob/master/LICENSE)
+[![documentation](https://img.shields.io/badge/docs-scilaunch-yellow.svg?style=flat)](https://shescher.github.io/scilaunch)
+[![GitHub package version](https://img.shields.io/github/v/tag/shescher/scilaunch)](https://github.com/shescher/scilaunch/tags)
 
-`[Last update 2023-11-10 | v.0.1.2]`
+`[Last update 2023-11-11 | v.0.1.2]`
 
 ## Description
 
@@ -58,6 +60,8 @@ A tiny program for you that lays the foundation for great discoveries.
 
 The project structure can be populated with other programming languages (`R`, `matlab`, etc.) as well.
 
+Check out the `scilaunch` [documentation](https://shescher.github.io/scilaunch)  🚀 for more information.
+
 ## Getting started
 
 ### Install `scilaunch`
@@ -76,16 +80,16 @@ pip install -U git+https://github.com/SHEscher/scilaunch.git
 
 It is also recommended to have [`conda`](https://docs.conda.io/projects/conda/en/latest/user-guide/install/index.html) installed.
 
-### Run `scilaunch`
+### 🚀 Run `scilaunch`
 
 Simply run `scilaunch` via the command line:
 
 ```shell
-# Assuming you are in the parent directory that hosts your research project
+# Assuming you are in the parent directory that should host your research project
 scilaunch
 
 # or provide the parent dir by running
-scilaunch PATH/TO/PARENT/DIR
+scilaunch  PATH/TO/PARENT/DIR
 ```
 
 Then, you will be asked to provide some information relevant to your project.

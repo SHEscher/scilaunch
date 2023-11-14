@@ -143,6 +143,7 @@ directory = "src/tests/coverage_html_report"
 [tool.bumpver]
 current_version = "0.1.2"
 version_pattern = "MAJOR.MINOR.PATCH"
+pre_commit_hook = "scripts/badge.sh"
 commit_message = "bump version {old_version} -> {new_version}"
 commit = true
 tag = true
@@ -151,4 +152,3 @@ push = false
 [tool.bumpver.file_patterns]
 "pyproject.toml" = ['^version = "{version}"', 'current_version = "{version}"']
 "src/scilaunch/__init__.py" = ['^__version__ = "{version}"']
-"README.md" = [' v.{version}']

@@ -31,8 +31,8 @@ dependencies = [
 [project.optional-dependencies]
 develop = [
     "black>=23.11.0",
-    "ruff>=0.1.5",
-    "tox>=4.11",
+    "ruff>=0.1.6",
+    "tox>=4.11.4",
     "pytest>=7.2",
     "pytest-cov",
     "toml==0.10.2",

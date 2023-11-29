@@ -23,7 +23,7 @@ classifiers = [
 ]
 
 dependencies = [
-    "cookiecutter>=2.2.0, <3.0",
+    "cookiecutter>=2.5.0, <3.0",
     'GitPython>=3.1, <4.0',
     "python-box>=7.0, <8.0",
 ]

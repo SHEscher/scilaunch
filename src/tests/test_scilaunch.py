@@ -54,8 +54,8 @@ def test_create():
             "email": "test@test.ts",
             "github_username": "Tester",
             "project_name": test_project_name,
-            "create_conda_env": "n",
-            "init_git": "n",
+            "create_conda_env": False,
+            "init_git": False,
         },
     )
     assert (SCILAUNCH_CACHE / test_project_name).exists()

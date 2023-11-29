@@ -59,6 +59,7 @@ docs = [
 
 [project.urls]
 GitHub = "https://github.com/SHEscher/scilaunch"
+Cookiecutter-Template = "https://github.com/SHEscher/research-project"
 Documentation = "https://shescher.github.io/scilaunch/"
 
 # For command line interface (CLI)

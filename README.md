@@ -9,7 +9,7 @@ A tiny program for you that lays the foundation for great discoveries.
 [![license: BSD](https://img.shields.io/badge/license-BSD-purple.svg)](https://github.com/shescher/scilaunch/blob/master/LICENSE)
 [![documentation](https://img.shields.io/badge/docs-scilaunch-yellow.svg?style=flat)](https://shescher.github.io/scilaunch)
 [![GitHub package version](https://img.shields.io/github/v/tag/shescher/scilaunch)](https://github.com/shescher/scilaunch/tags)
-![Last update](https://img.shields.io/badge/last_update-Nov_11,_2023-green)
+![Last update](https://img.shields.io/badge/last_update-Nov_29,_2023-green)
 
 ## Description
 

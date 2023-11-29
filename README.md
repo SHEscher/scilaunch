@@ -86,8 +86,11 @@ Simply run `scilaunch` via the command line:
 ```shell
 # Assuming you are in the parent directory that should host your research project
 scilaunch
+```
 
-# or provide the parent dir by running
+or provide the parent directory of your project by running:
+
+```shell
 scilaunch  PATH/TO/PARENT/DIR
 ```
 

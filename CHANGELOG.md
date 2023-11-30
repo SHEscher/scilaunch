@@ -2,6 +2,8 @@
 
 ## 0.2.1
 
+* add checks if boolean vars in `.cookiecutterrc` are set correctly to `true` or `false`
+
 ### Misc
 * add more info
 

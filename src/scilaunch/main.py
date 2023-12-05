@@ -30,6 +30,7 @@ def main():
     parser = argparse.ArgumentParser(description="Create a research project structure.")
     parser.add_argument("out", type=str, nargs="?", help="Target parent / output directory", default=Path.cwd())
     parser.add_argument("-o", "--out_dir", type=str, help="Target parent / output directory")
+    parser.add_argument("-v", "--verbose", action=argparse.BooleanOptionalAction, default=False, help="verbose output")
 
     # Extract arguments with flags
     FLAGS, _ = parser.parse_known_args()
@@ -39,7 +40,7 @@ def main():
         FLAGS.out = FLAGS.out_dir
 
     # Create a directory structure for a research project
-    create(out_dir=FLAGS.out)
+    create(out_dir=FLAGS.out, verbose=FLAGS.verbose)
 
     return 0
 

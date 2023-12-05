@@ -159,13 +159,14 @@ def is_git_repo_up_to_date(path):
     return repo.head.commit == upstream.refs.main.commit
 
 
-def create(out_dir, create_cc_rc=True, **kwargs):
+def create(out_dir, create_cc_rc=True, verbose=False, **kwargs):
     """
     Create the research project structure based on the `research-project` template.
 
     :param out_dir: Path to the output directory.
     :type out_dir: str or pathlib.Path
     :param bool create_cc_rc: Whether to create the `.cookiecutterrc` file.
+    :param bool verbose: Whether to print verbose output.
     :param dict kwargs: Keyword arguments passed to `cookiecutter`.
     """
     # Create cookiecutterrc file (if not existing)
@@ -179,7 +180,8 @@ def create(out_dir, create_cc_rc=True, **kwargs):
         template = path_to.templates.remote.research_project
     else:
         # Check whether the template is up to date
-        print(f"Checking whether '{template.name}' template is up-to-date ...")
+        if verbose:
+            print(f"Checking whether '{template.name}' template is up-to-date ...")
         if not is_git_repo_up_to_date(path=template):  # run git fetch
             answer = input(
                 f"\033[33m\nYour local version of the '{template.name}' template is not up-to-date.\n"
@@ -191,7 +193,7 @@ def create(out_dir, create_cc_rc=True, **kwargs):
                 print(f"\033[32m\nUpdated local version of the '{template.name}' template.\n\033[0m")
             else:
                 print(f"\033[33m\nUsing local version of the '{template.name}' template.\n\033[0m")
-        else:
+        elif verbose:
             print(f"Your local version of the '{template.name}' template seems to be up-to-date.\n")
 
     # Run cookiecutter on template

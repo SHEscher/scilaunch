@@ -31,8 +31,10 @@ A more comprehensive contribution guide will be added in the future, in case the
 
 ## Future directions & ToDo's
 
-- [x] add proper docs
-  - [x] create website for docs
-  - [ ] extend `docs/`
+- [ ] extend `docs/`
 - [ ] allow passing other `cookiecutter` templates
 - [ ] add files in `/.github/ISSUE_TEMPLATE/`
+- [ ] *midterm ideas*: `scilaunch` methods after project is initialized, e.g.:
+  - [ ] `scilaunch docs`  create docs website
+  - [ ] `scilaunch add` e.g. LICENSE (runs only LICENSE template)
+  - [ ] ...

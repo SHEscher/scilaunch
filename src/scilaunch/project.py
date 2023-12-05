@@ -90,7 +90,7 @@ def check_booleans_in_cookiecutterrc():
             yaml.dump(cookiecutterrc, f, sort_keys=False, indent=4)
 
 
-def create_cookiecutterrc(**kwargs):
+def create_cookiecutterrc(verbose=False, **kwargs):
     """
     Create the `.cookiecutterrc` file.
 
@@ -100,6 +100,7 @@ def create_cookiecutterrc(**kwargs):
     Fore more information on the `.cookiecutterrc` file check out the `cookiecutter`
     [documentation](https://cookiecutter.readthedocs.io/en/stable/index.html).
 
+    :param bool verbose: Whether to print verbose output.
     :param dict kwargs: Keyword arguments passed to `cookiecutter`.
     """
     # Check whether .cookiecutterrc file exists in the home directory
@@ -135,7 +136,8 @@ def create_cookiecutterrc(**kwargs):
 
     else:
         check_booleans_in_cookiecutterrc()
-        print(f"\nUsing existing {COOKIECUTTERRC} to fill defaults.\n")
+        if verbose:
+            print(f"\nUsing existing {COOKIECUTTERRC} to fill defaults.\n")
 
 
 def is_git_repo_up_to_date(path):
@@ -171,7 +173,7 @@ def create(out_dir, create_cc_rc=True, verbose=False, **kwargs):
     """
     # Create cookiecutterrc file (if not existing)
     if create_cc_rc:
-        create_cookiecutterrc()
+        create_cookiecutterrc(verbose=verbose)
 
     # Create project
     print(f"\033[34m\nStart creating research project structure in {out_dir} ...\n\033[0m")

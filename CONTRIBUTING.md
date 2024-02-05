@@ -3,6 +3,7 @@
 Contributions are very welcome, and credit will always be given!
 
 ## Templating
+
 `scilaunch` is a wrapper around the template engine [`cookiecutter`](https://github.com/cookiecutter/cookiecutter).
 That means, that the development of `scilaunch` is closely related to the development of the template [`research-project`](https://github.com/SHEscher/research-project).
 

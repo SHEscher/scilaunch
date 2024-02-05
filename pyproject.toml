@@ -31,10 +31,9 @@ dependencies = [
 
 [project.optional-dependencies]
 develop = [
-    "black>=23.11.0",
-    "ruff>=0.1.7",
+    "ruff>=0.2.0",
     "tox>=4.11.4",
-    "pytest>=7.2",
+    "pytest>=8.0.0",
     "pytest-cov",
     "toml==0.10.2",
 ]
@@ -84,19 +83,19 @@ scilaunch = ["**/*.json", "**/.cookiecutterrc"]
 max-line-length = 119
 
 [tool.ruff]
-select = ["ALL"]
-unfixable = [ # list of rules to consider non-autofix-able.
+lint.select = ["ALL"]
+lint.unfixable = [ # list of rules to consider non-autofix-able.
     "ERA001", # Found commented-out code
     "F401",   # unused imports
 ]
-ignore = ["ANN", "COM", "D203", "D212", "FBT", "N806", "T201"]
+lint.ignore = ["ANN", "COM", "D203", "D212", "FBT","ISC001", "N806", "T201"]
 
 extend-exclude = []
 line-length = 119   # Same as flake8 and black
 # target-version = "py311"
 src = ["src/scilaunch", "src/tests"]
 
-[tool.ruff.extend-per-file-ignores]
+[tool.ruff.lint.extend-per-file-ignores]
 "*/tests/*.py" = [
     "ERA001",
     "S101",

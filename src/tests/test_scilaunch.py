@@ -45,14 +45,14 @@ def temp_cookiecutterrc():
 
     # Create dir
     project.COOKIECUTTERRC.parent.mkdir(parents=True, exist_ok=True)
+
+    # Create temporary cookiecutterrc file (use different 'boolean' styles)
     cookiecutterrc = {
         "default_context": {
             "full_name": "Test Author",
             "email": "pytest@author.me",
-            "github_username": "PyTester",
             "create_conda_env": "y",
             "init_git": "no",
-            "use_pytest": 1,
             "use_black": False,
             "linting": "ruff",
         },
@@ -127,7 +127,6 @@ def test_check_booleans_in_cookiecutterrc(capsys, temp_cookiecutterrc):
     # Check if boolean values are updated
     assert cookiecutterrc["default_context"]["create_conda_env"] is True
     assert cookiecutterrc["default_context"]["init_git"] is False
-    assert cookiecutterrc["default_context"]["use_pytest"] is True
     assert cookiecutterrc["default_context"]["use_black"] is False
     assert ".cookiecutterrc boolean default values ..." in out
 
@@ -146,9 +145,10 @@ def test_create_cookiecutterrc(capsys, temp_cookiecutterrc):
     _ = temp_cookiecutterrc
 
     # Test case when .cookiecutterrc file is present
-    project.create_cookiecutterrc()
+    project.create_cookiecutterrc(verbose=True)
     out, _ = capsys.readouterr()  # _ = err
     assert f"Using existing {project.COOKIECUTTERRC} to fill defaults." in out
+    assert f"Updating {project.COOKIECUTTERRC} boolean default values" in out
 
     # Test case when no file is present
     # Remove .cookiecutterrc file temporarily
@@ -169,7 +169,6 @@ def test_create(temp_scilaunch_cache):
         extra_context={
             "full_name": "test_author",
             "email": "test@test.ts",
-            "github_username": "Tester",
             "project_name": test_project_name,
             "create_conda_env": False,
             "init_git": False,

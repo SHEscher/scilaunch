@@ -27,9 +27,9 @@ def _check_str_to_bool(val: str):
     :return: True if the string can be converted to a boolean, False otherwise.
     :rtype: bool
     """
-    if val.lower() in ["n", "no", "false", "f", "0", "off"]:
+    if val.lower() in {"n", "no", "false", "f", "0", "off"}:
         return False
-    if val.lower() in ["y", "yes", "true", "t", "1", "on"]:
+    if val.lower() in {"y", "yes", "true", "t", "1", "on"}:
         return True
     return None
 
@@ -110,7 +110,10 @@ def create_cookiecutterrc(verbose=False, **kwargs):
         cache_dir = Path.home() / ".cache/scilaunch"
         cache_dir.mkdir(parents=True, exist_ok=True)
 
-        print(f"\033[34m\nSetting default values in {COOKIECUTTERRC}. This should be done only once ...\n\033[0m")
+        print(f"\033[34m\nSetting default values in {COOKIECUTTERRC} for your new projects. "
+              f"This should be done only once ...\n\n"
+              f"Note, except for the name and email, recommended defaults are in (*) "
+              f"and can be confirmed with just pressing Enter\n\033[0m")
         cookiecutter(template=path_to.templates.local.cookiecutterrc, output_dir=str(cache_dir), **kwargs)
 
         # Move file to home directory
@@ -176,7 +179,7 @@ def create(out_dir, create_cc_rc=True, verbose=False, **kwargs):
         create_cookiecutterrc(verbose=verbose)
 
     # Create project
-    print(f"\033[34m\nStart creating research project structure in {out_dir} ...\n\033[0m")
+    print(f"\033[34m\nStart creating a new research project structure in {out_dir} ...\n\033[0m")
     template = Path(path_to.templates.local.research_project).expanduser()
     if not template.exists():
         template = path_to.templates.remote.research_project

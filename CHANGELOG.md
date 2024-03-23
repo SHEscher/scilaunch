@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.2.2
+
+* simplify default settings
+
+#### Misc
+* add a verbose option to declutter output
+
 ## 0.2.1
 
 * add checks if boolean vars in `.cookiecutterrc` are set correctly to `true` or `false`

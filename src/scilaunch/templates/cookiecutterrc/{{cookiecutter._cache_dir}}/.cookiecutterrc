@@ -1,10 +1,8 @@
 default_context:
     full_name: "{{ cookiecutter.full_name }}"
     email: "{{ cookiecutter.email }}"
-    github_username: "{{ cookiecutter.github_username }}"
     create_conda_env: {{ cookiecutter.create_conda_env }}
     init_git: {{ cookiecutter.init_git }}
-    use_pytest: {{ cookiecutter.use_pytest }}
     use_black: {{ cookiecutter.use_black }}
     linting: "{{ cookiecutter.linting }}"
 abbreviations:

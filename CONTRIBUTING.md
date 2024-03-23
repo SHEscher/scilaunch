@@ -33,9 +33,13 @@ A more comprehensive contribution guide will be added in the future, in case the
 ## Future directions & ToDo's
 
 - [ ] extend `docs/`
+  - [ ] add brief information & recommendations to docs for all options to choose from
+  - [ ] create tutorial videos
 - [ ] allow passing other `cookiecutter` templates
+- [ ] optional: implement `scilaunch example --remove` or so to remove example files
 - [ ] add files in `/.github/ISSUE_TEMPLATE/`
 - [ ] *midterm ideas*: `scilaunch` methods after project is initialized, e.g.:
-  - [ ] `scilaunch docs`  create docs website
+  - [ ]  project specific `.scilaunch` file to save project settings
   - [ ] `scilaunch add` e.g. LICENSE (runs only LICENSE template)
+  - [ ] `scilaunch docs` create docs website
   - [ ] ...

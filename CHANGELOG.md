@@ -5,6 +5,7 @@
 * simplify default settings
 
 #### Misc
+
 * add a verbose option to declutter output
 
 ## 0.2.1

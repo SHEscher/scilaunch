@@ -110,10 +110,12 @@ def create_cookiecutterrc(verbose=False, **kwargs):
         cache_dir = Path.home() / ".cache/scilaunch"
         cache_dir.mkdir(parents=True, exist_ok=True)
 
-        print(f"\033[34m\nSetting default values in {COOKIECUTTERRC} for your new projects. "
-              f"This should be done only once ...\n\n"
-              f"Note, except for the name and email, recommended defaults are in (*) "
-              f"and can be confirmed with just pressing Enter\n\033[0m")
+        print(
+            f"\033[34m\nSetting default values in {COOKIECUTTERRC} for your new projects. "
+            f"This should be done only once ...\n\n"
+            f"Note, except for the name and email, recommended defaults are in (*) "
+            f"and can be confirmed with just pressing Enter\n\033[0m"
+        )
         cookiecutter(template=path_to.templates.local.cookiecutterrc, output_dir=str(cache_dir), **kwargs)
 
         # Move file to home directory

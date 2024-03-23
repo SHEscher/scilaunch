@@ -12,5 +12,6 @@ Alternatively, use Python's `-m` flag:
 
 Follow the instructions in the terminal to set up the research project.
 """
+
 __author__ = """Simon M. Hofmann"""
 __version__ = "0.2.1"

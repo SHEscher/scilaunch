@@ -31,7 +31,7 @@ dependencies = [
 
 [project.optional-dependencies]
 develop = [
-    "ruff>=0.3.4",
+    "ruff>=0.3.5",
     "tox>=4.14.2",
     "pytest>=8.1.1",
     "pytest-cov",
@@ -141,7 +141,7 @@ exclude_lines = ["if __name__ == .__main__.:"]
 [tool.coverage.html]
 directory = "src/tests/coverage_html_report"
 
-# For instance run in shell: bumpver update --dry --no-fetch --patch
+# For instance, run in shell: bumpver update --dry --no-fetch --patch
 [tool.bumpver]
 current_version = "0.2.2"
 version_pattern = "MAJOR.MINOR.PATCH"

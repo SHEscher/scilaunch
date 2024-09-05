@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+         <loc>https://shescher.github.io/scilaunch/</loc>
+         <lastmod>2024-09-05</lastmod>
+    </url>
+    <url>
+         <loc>https://shescher.github.io/scilaunch/changelog/</loc>
+         <lastmod>2024-09-05</lastmod>
+    </url>
+    <url>
+         <loc>https://shescher.github.io/scilaunch/contributing/</loc>
+         <lastmod>2024-09-05</lastmod>
+    </url>
+    <url>
+         <loc>https://shescher.github.io/scilaunch/license/</loc>
+         <lastmod>2024-09-05</lastmod>
+    </url>
+    <url>
+         <loc>https://shescher.github.io/scilaunch/reference/</loc>
+         <lastmod>2024-09-05</lastmod>
+    </url>
+    <url>
+         <loc>https://shescher.github.io/scilaunch/reference/configs/</loc>
+         <lastmod>2024-09-05</lastmod>
+    </url>
+    <url>
+         <loc>https://shescher.github.io/scilaunch/reference/main/</loc>
+         <lastmod>2024-09-05</lastmod>
+    </url>
+    <url>
+         <loc>https://shescher.github.io/scilaunch/reference/project/</loc>
+         <lastmod>2024-09-05</lastmod>
+    </url>
+</urlset>

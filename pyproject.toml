@@ -31,11 +31,11 @@ dependencies = [
 
 [project.optional-dependencies]
 develop = [
-    "ruff>=0.3.7",
-    "tox>=4.14.2",
-    "pytest>=8.1.1",
+    "ruff>=0.6.3, <1.0.0",
+    "tox>=4.18.0, <5.0.0",
+    "pytest>=8.3.2, <9.0.0",
     "pytest-cov",
-    "toml==0.10.2",
+    "toml==0.10.2, <0.11.0",
 ]
 
 docs = [
@@ -94,6 +94,7 @@ extend-exclude = []
 line-length = 119   # Same as flake8 and black
 # target-version = "py311"
 src = ["src/scilaunch", "src/tests"]
+output-format = "concise" # or "full"
 
 [tool.ruff.lint.extend-per-file-ignores]
 "*/tests/*.py" = [

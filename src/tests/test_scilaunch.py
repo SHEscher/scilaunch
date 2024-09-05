@@ -19,7 +19,7 @@ from scilaunch import configs, project
 # %% Set global vars & paths >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o
 
 
-@pytest.fixture()
+@pytest.fixture
 def temp_scilaunch_cache():
     """Create temp cache dir."""
     scilaunch_cache = Path.home() / ".cache/scilaunch"
@@ -37,7 +37,7 @@ def temp_scilaunch_cache():
         scilaunch_cache.rmdir()
 
 
-@pytest.fixture()
+@pytest.fixture
 def temp_cookiecutterrc():
     """Create temporary ~/.cookiecutterrc file."""
     if project.COOKIECUTTERRC.exists():
@@ -47,7 +47,7 @@ def temp_cookiecutterrc():
     # Create dir
     project.COOKIECUTTERRC.parent.mkdir(parents=True, exist_ok=True)
 
-    # Create temporary cookiecutterrc file (use different 'boolean' styles)
+    # Create a temporary cookiecutterrc file (use different 'boolean' styles)
     cookiecutterrc = {
         "default_context": {
             "full_name": "Test Author",
@@ -62,11 +62,11 @@ def temp_cookiecutterrc():
             "rp": "https://github.com/SHEscher/research-project.git",
         },
     }
-    # Write temporary file
+    # Write a temporary file
     with project.COOKIECUTTERRC.open("w") as f:
         yaml.dump(cookiecutterrc, f)
 
-    # Read updated file
+    # Read the updated file
     with project.COOKIECUTTERRC.open() as f:
         cookiecutterrc = yaml.safe_load(f)
 
@@ -114,14 +114,14 @@ def test__check_int_to_bool():
 
 def test_check_booleans_in_cookiecutterrc(capsys, temp_cookiecutterrc):
     """Test check_booleans_in_cookiecutterrc()."""
-    # Create temporary cookiecutterrc file
+    # Create a temporary cookiecutterrc file
     _ = temp_cookiecutterrc
 
     # Update boolean values
     project.check_booleans_in_cookiecutterrc()
     out, _ = capsys.readouterr()  # _ = err
 
-    # Read updated file
+    # Read the updated file
     with project.COOKIECUTTERRC.open() as f:
         cookiecutterrc = yaml.safe_load(f)
 
@@ -142,7 +142,7 @@ def test_check_booleans_in_cookiecutterrc(capsys, temp_cookiecutterrc):
 
 def test_create_cookiecutterrc(capsys, temp_cookiecutterrc):
     """Test create_cookiecutterrc()."""
-    # Create temporary cookiecutterrc file
+    # Create a temporary cookiecutterrc file
     _ = temp_cookiecutterrc
 
     # Test case when .cookiecutterrc file is present

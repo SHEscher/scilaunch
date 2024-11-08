@@ -110,3 +110,4 @@ ENV/
 
 # Other tools
 *.pxd
+visuals/

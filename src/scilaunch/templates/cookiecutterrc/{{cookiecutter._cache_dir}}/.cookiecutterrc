@@ -3,8 +3,6 @@ default_context:
     email: "{{ cookiecutter.email }}"
     create_conda_env: {{ cookiecutter.create_conda_env }}
     init_git: {{ cookiecutter.init_git }}
-    use_black: {{ cookiecutter.use_black }}
-    linting: "{{ cookiecutter.linting }}"
 abbreviations:
     rp: https://github.com/SHEscher/research-project.git
     gh: https://github.com/{0}.git

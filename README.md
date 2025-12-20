@@ -59,7 +59,7 @@ A tiny program for you that lays the foundation for great discoveries.
 
 The project structure can be populated with other programming languages (`R`, `matlab`, etc.) as well.
 
-Check out the `scilaunch` [documentation](https://shescher.github.io/scilaunch)  🚀 for more information.
+Check out the `scilaunch` [documentation](https://shescher.github.io/scilaunch) 🚀 for more information.
 
 ## Getting started
 
@@ -108,7 +108,7 @@ You can still change these default values in `~/.cookiecutterrc` at a later stag
 `scilaunch` is a wrapper around the great [`cookiecutter`](https://github.com/cookiecutter/cookiecutter) package
 and is mainly built around this template: [`research-project`](https://github.com/SHEscher/research-project).
 
-How to build your own template(s) and contribute to this project: please check out `CONTRIBUTING.md`.
+For how to build your own template(s) and to contribute to this project, please check out: `CONTRIBUTING.md`.
 
 Note, after running `scilaunch` the first time, you can adapt your default values in `~/.cookiecutterrc` at any time.
 Check out the `cookiecutter` [documentation](https://cookiecutter.readthedocs.io/en/stable/index.html) for more information on the `~/.cookiecutterrc`.

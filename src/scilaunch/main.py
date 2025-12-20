@@ -3,6 +3,7 @@
 # %% Import
 import argparse
 import sys
+from importlib.metadata import PackageNotFoundError, version
 from pathlib import Path
 
 from scilaunch.project import create
@@ -18,24 +19,38 @@ def main():
 
         scilaunch
 
-    Optionally set the output directory with the `-o` or `--out-dir` flag.
+    Optionally, set the output directory with the `-o` or `--out-dir` flag.
     Or just add the output directory without any flags.
 
         scilaunch PARENT/DIR
 
     If no target/output directory is set,
-    the current working directory is used as parent directory for the initialized research project.
+    the current working directory is used as the parent directory for the initialized research project.
     """
     # Parse arguments
     parser = argparse.ArgumentParser(description="Create a research project structure.")
     parser.add_argument("out", type=str, nargs="?", help="Target parent / output directory", default=Path.cwd())
     parser.add_argument("-o", "--out_dir", type=str, help="Target parent / output directory")
     parser.add_argument("-v", "--verbose", action=argparse.BooleanOptionalAction, default=False, help="verbose output")
+    parser.add_argument(
+        "-V",
+        "--version",
+        action=argparse.BooleanOptionalAction,
+        default=False,
+        help="Display scilaunch version information",
+    )
 
     # Extract arguments with flags
     FLAGS, _ = parser.parse_known_args()
-
     # We use this to allow for both positional and flag arguments (since we just have this one argument)
+
+    if FLAGS.version:
+        try:
+            print("scilaunch", version("scilaunch"))
+        except PackageNotFoundError:
+            print("scilaunch (not installed)")
+        return 0
+
     if FLAGS.out_dir:
         FLAGS.out = FLAGS.out_dir
 

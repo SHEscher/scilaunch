@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.3.0
+
+* simplify settings further
+* return version info via flag
+* upgrade deps
+* minor clean-ups
+
 ## 0.2.2
 
 * simplify default settings
@@ -23,7 +30,7 @@
 
 ### Misc
 
-* add last-update badge to README.md
+* add the last-update badge to README.md
 * add script to auto update last-update badge
 * bump cookiecutter version to 2.5.0 to use [nested configuration files](https://cookiecutter.readthedocs.io/en/stable/advanced/nested_config_files.html#nested-configuration-files)
 * switch some defaults to boolean values

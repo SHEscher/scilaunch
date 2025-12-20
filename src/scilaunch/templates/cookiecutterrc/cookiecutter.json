@@ -3,22 +3,11 @@
     "email": "NAME@EXAMPLE.com",
     "create_conda_env": true,
     "init_git": true,
-    "use_black": true,
-    "linting": [
-        "ruff",
-        "flake8"
-    ],
     "_cache_dir": "scilaunch",
     "__prompts__": {
         "full_name": "Provide the default author name for new projects:",
         "email": "Provide the default author's email address:",
         "create_conda_env": "Set the default option for creating a conda environment in new projects:",
-        "init_git": "Set the default option for initializing a git repository in new project folders:",
-        "use_black": "Set the default option to enable the Black Python formatter:",
-        "linting": {
-            "__prompt__": "Set the default Python linting tool:",
-            "ruff": "Ruff (recommended)",
-            "flake8": "Flake8"
-        }
+        "init_git": "Set the default option for initializing a git repository in new project folders:"
     }
 }

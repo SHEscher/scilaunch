@@ -1,7 +1,7 @@
 """
 Configuration file for `scilaunch`.
 
-Relevant paths and links are stored in the form of a json file, which is loaded into a `box.Box` object.
+Relevant paths and links are stored in the form of a JSON file, which is loaded into a `box.Box` object.
 
 ```python
 _paths_json = {

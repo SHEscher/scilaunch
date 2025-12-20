@@ -31,12 +31,13 @@ dependencies = [
 
 [project.optional-dependencies]
 develop = [
-    "bumpver==2023.1129",
-    "ruff>=0.6.3, <1.0.0",
-    "tox>=4.18.0, <5.0.0",
-    "pytest>=8.3.2, <9.0.0",
+    "bumpver==2025.1131",
+    "ruff>=0.14.10, <2.0.0",
+    "tox>=4.32.0, <5.0.0",
+    "pytest>=9.0.2, <10.0.0",
     "pytest-cov",
-    "toml==0.10.2, <0.11.0",
+    "toml>=0.10.2, <0.11.0",
+    "ty>=0.0.4, <2.0.0",
 ]
 
 docs = [
@@ -103,6 +104,9 @@ output-format = "concise" # or "full"
     "S101",
     "SLF001",
 ] # ignore assert statements, & comments in tests
+
+[tool.ty.terminal]
+output-format = "concise" # or "full"
 
 [tool.black]
 line-length = 119

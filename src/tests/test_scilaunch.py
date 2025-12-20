@@ -32,7 +32,7 @@ def temp_scilaunch_cache():
     if (scilaunch_cache / test_project_name).exists():
         shutil.rmtree(scilaunch_cache / test_project_name)
 
-    # Check if cache dir is empty, if so remove it
+    # Check if the cache dir is empty, if so, remove it
     if not list(scilaunch_cache.iterdir()):
         scilaunch_cache.rmdir()
 
@@ -145,7 +145,7 @@ def test_create_cookiecutterrc(capsys, temp_cookiecutterrc):
     # Create a temporary cookiecutterrc file
     _ = temp_cookiecutterrc
 
-    # Test case when .cookiecutterrc file is present
+    # Test case when the .cookiecutterrc file is present
     project.create_cookiecutterrc(verbose=True)
     out, _ = capsys.readouterr()  # _ = err
     assert f"Using existing {project.COOKIECUTTERRC} to fill defaults." in out

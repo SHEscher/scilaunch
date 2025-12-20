@@ -1,6 +1,8 @@
-"""Create project module for `scilaunch`."""
+"""Create a project module for `scilaunch`."""
 
 # %% Import
+from __future__ import annotations
+
 import json
 from pathlib import Path
 
@@ -13,13 +15,13 @@ from scilaunch.configs import path_to
 
 # %% Set global vars & paths >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o
 
-COOKIECUTTERRC = Path.home() / ".cookiecutterrc"  # destination for cookiecutterrc file
+COOKIECUTTERRC = Path.home() / ".cookiecutterrc"  # destination for the cookiecutterrc file
 
 
 # %% Functions >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o >><< o
 
 
-def _check_str_to_bool(val: str):
+def _check_str_to_bool(val: str) -> bool | None:
     """
     Check whether the given string can be converted to a boolean.
 
@@ -34,7 +36,7 @@ def _check_str_to_bool(val: str):
     return None
 
 
-def _check_int_to_bool(val: int):
+def _check_int_to_bool(val: float) -> bool | None:
     """
     Check whether the given integer can be converted to a boolean.
 
@@ -55,7 +57,7 @@ def check_booleans_in_cookiecutterrc():
     with COOKIECUTTERRC.open() as f:
         cookiecutterrc = yaml.safe_load(f)
 
-    # Read cookiecutter.json file (JSON)
+    # Read the cookiecutter.json file (JSON)
     with Path(path_to.templates.local.cookiecutterrc, "cookiecutter.json").open() as f:
         cookiecutter_json = json.load(f)
 
@@ -83,7 +85,7 @@ def check_booleans_in_cookiecutterrc():
             cookiecutterrc["default_context"][key] = default_val if crc_val is None else crc_val
             updated = True
 
-    # Write updated .cookiecutterrc file (YAML)
+    # Write the updated .cookiecutterrc file (YAML)
     if updated:
         print(f"\033[33m\nUpdating {COOKIECUTTERRC} boolean default values ...\033[0m")
         with COOKIECUTTERRC.open("w") as f:
@@ -97,13 +99,13 @@ def create_cookiecutterrc(verbose=False, **kwargs):
     The `.cookiecutterrc` file is stored in the home directory "`~`"
     and contains default values for the `research-project` template.
 
-    Fore more information on the `.cookiecutterrc` file check out the `cookiecutter`
+    Fore more information on the `.cookiecutterrc` file, check out the `cookiecutter`
     [documentation](https://cookiecutter.readthedocs.io/en/stable/index.html).
 
     :param bool verbose: Whether to print verbose output.
     :param dict kwargs: Keyword arguments passed to `cookiecutter`.
     """
-    # Check whether .cookiecutterrc file exists in the home directory
+    # Check whether the .cookiecutterrc file exists in the home directory
     if not COOKIECUTTERRC.exists():
         # Create cookiecutterrc file
         # Create cache dir
@@ -118,8 +120,8 @@ def create_cookiecutterrc(verbose=False, **kwargs):
         )
         cookiecutter(template=path_to.templates.local.cookiecutterrc, output_dir=str(cache_dir), **kwargs)
 
-        # Move file to home directory
-        # Read cache dir from json
+        # Move file to the home directory
+        # Read cache dir from JSON
         with Path(path_to.templates.local.cookiecutterrc, "cookiecutter.json").open() as f:
             cache_dir = cache_dir / json.load(f).get("_cache_dir")
         (cache_dir / COOKIECUTTERRC.name).rename(COOKIECUTTERRC)
@@ -176,11 +178,11 @@ def create(out_dir, create_cc_rc=True, verbose=False, **kwargs):
     :param bool verbose: Whether to print verbose output.
     :param dict kwargs: Keyword arguments passed to `cookiecutter`.
     """
-    # Create cookiecutterrc file (if not existing)
+    # Create the cookiecutterrc file (if not existing)
     if create_cc_rc:
         create_cookiecutterrc(verbose=verbose)
 
-    # Create project
+    # Create the project
     print(f"\033[34m\nStart creating a new research project structure in {out_dir} ...\n\033[0m")
     template = Path(path_to.templates.local.research_project).expanduser()
     if not template.exists():
@@ -203,7 +205,7 @@ def create(out_dir, create_cc_rc=True, verbose=False, **kwargs):
         elif verbose:
             print(f"Your local version of the '{template.name}' template seems to be up-to-date.\n")
 
-    # Run cookiecutter on template
+    # Run cookiecutter on the template
     print("\033[4m\033[34m\nProvide information about your research project:\n\033[0m")
     cookiecutter(template=str(template), overwrite_if_exists=False, output_dir=str(out_dir), **kwargs)
 

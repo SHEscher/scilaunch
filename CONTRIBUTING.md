@@ -38,7 +38,7 @@ A more comprehensive contribution guide will be added in the future, in case the
 - [ ] allow passing other `cookiecutter` templates
 - [ ] optional: implement `scilaunch example --remove` or so to remove example files
 - [ ] add files in `/.github/ISSUE_TEMPLATE/`
-- [ ] *midterm ideas*: `scilaunch` methods after project is initialized, e.g.:
+- [ ] *midterm ideas*: `scilaunch` methods after a project is initialized, e.g.:
   - [ ]  project specific `.scilaunch` file to save project settings
   - [ ] `scilaunch add` e.g. LICENSE (runs only LICENSE template)
   - [ ] `scilaunch docs` create docs website

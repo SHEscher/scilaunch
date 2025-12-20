@@ -5,7 +5,7 @@ A tiny program for you that lays the foundation for great discoveries.
 ![scilaunch](https://github.com/SHEscher/scilaunch/raw/main/scilaunch_logo.png)
 
 ![Environment](https://github.com/SHEscher/scilaunch/actions/workflows/tests.yaml/badge.svg)
-![Python](https://img.shields.io/badge/python->=3.8-blue.svg)
+![Python](https://img.shields.io/badge/python->=3.9-blue.svg)
 [![license: BSD](https://img.shields.io/badge/license-BSD-purple.svg)](https://github.com/shescher/scilaunch/blob/master/LICENSE)
 [![documentation](https://img.shields.io/badge/docs-scilaunch-yellow.svg?style=flat)](https://shescher.github.io/scilaunch)
 [![GitHub package version](https://img.shields.io/github/v/tag/shescher/scilaunch)](https://github.com/shescher/scilaunch/tags)

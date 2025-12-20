@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.3.1
+
+* add support upto Python 3.14
+* end support for Python 3.8
+
 ## 0.3.0
 
 * simplify settings further
